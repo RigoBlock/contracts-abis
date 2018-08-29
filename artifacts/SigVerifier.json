@@ -1,0 +1,45 @@
+{
+    "contract_name": "SigVerifier",
+    "networks": {
+        "5777": {
+            "solc_version": "0.4.24",
+            "source_tree_hash": "0xe7d51d34f18e575376b7632ee280e8109eda9f35d2687361bc49061f6af12ab9",
+            "optimizer_enabled": true,
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "hash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "name": "signature",
+                            "type": "bytes"
+                        }
+                    ],
+                    "name": "isValidSignature",
+                    "outputs": [
+                        {
+                            "name": "isValid",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                }
+            ],
+            "bytecode": "0x608060405234801561001057600080fd5b5060ad8061001f6000396000f300608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631626ba7e81146043575b600080fd5b348015604e57600080fd5b5060646004803590602480359081019101356078565b604080519115158252519081900360200190f35b600093925050505600a165627a7a72305820467929e5d74d656542e2c38604967b8602ae132a4fb246acdb9efb9e1533f9460029",
+            "runtime_bytecode": "0x608060405260043610603e5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631626ba7e81146043575b600080fd5b348015604e57600080fd5b5060646004803590602480359081019101356078565b604080519115158252519081900360200190f35b600093925050505600a165627a7a72305820467929e5d74d656542e2c38604967b8602ae132a4fb246acdb9efb9e1533f9460029",
+            "updated_at": 1535505681542,
+            "source_map": "801:449:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;801:449:0;;;;;;;",
+            "source_map_runtime": "801:449:0:-;;;;;;;;;;;;;;;;;;;;;;;1065:183;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1065:183:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1191:12;1065:183;;;;;:::o",
+            "sources": [
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/exchanges/SigVerifier/SigVerifier.sol"
+            ],
+            "address": "0x46fc972c18e71560299f344ccce4f2d9d6929496",
+            "constructor_args": "0x"
+        }
+    }
+}

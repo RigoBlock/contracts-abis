@@ -1,0 +1,215 @@
+{
+    "contract_name": "TokenTransferProxy",
+    "networks": {
+        "5777": {
+            "solc_version": "0.4.24",
+            "source_tree_hash": "0x23f2558ef14a91fdf69d382bd428c045a3b306a0d5cfcf3cac802cf354fccad9",
+            "optimizer_enabled": true,
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_new",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "setOwner",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "name": "to",
+                            "type": "address"
+                        },
+                        {
+                            "name": "value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "transferFrom",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "target",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "addAuthorizedAddress",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "authorities",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "target",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "removeAuthorizedAddress",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "authorized",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "bool"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "getAuthorizedAddresses",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address[]"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "target",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "caller",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "LogAuthorizedAddressAdded",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "target",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "caller",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "LogAuthorizedAddressRemoved",
+                    "type": "event"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "old",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "current",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "NewOwner",
+                    "type": "event"
+                }
+            ],
+            "bytecode": "0x608060405260008054600160a060020a03191633179055610895806100256000396000f30060806040526004361061008d5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166313af4035811461009257806315dacbea146100c257806342f1181e14610113578063494503d41461014157806370712939146101825780638da5cb5b146101b0578063b9181611146101c5578063d39de6e9146101f3575b600080fd5b34801561009e57600080fd5b506100c073ffffffffffffffffffffffffffffffffffffffff60043516610258565b005b3480156100ce57600080fd5b506100ff73ffffffffffffffffffffffffffffffffffffffff60043581169060243581169060443516606435610311565b604080519115158252519081900360200190f35b34801561011f57600080fd5b506100c073ffffffffffffffffffffffffffffffffffffffff600435166103e5565b34801561014d57600080fd5b50610159600435610510565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561018e57600080fd5b506100c073ffffffffffffffffffffffffffffffffffffffff60043516610545565b3480156101bc57600080fd5b50610159610781565b3480156101d157600080fd5b506100ff73ffffffffffffffffffffffffffffffffffffffff6004351661079d565b3480156101ff57600080fd5b506102086107b2565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561024457818101518382015260200161022c565b505050509050019250505060405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff16331461027c57600080fd5b73ffffffffffffffffffffffffffffffffffffffff8116151561029e57600080fd5b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821780845560405192939116917f70aea8d848e8a90fb7661b227dc522eb6395c3dac71b63cb59edd5c9899b23649190a350565b3360009081526001602052604081205460ff16151561032f57600080fd5b604080517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff86811660048301528581166024830152604482018590529151918716916323b872dd916064808201926020929091908290030181600087803b1580156103b057600080fd5b505af11580156103c4573d6000803e3d6000fd5b505050506040513d60208110156103da57600080fd5b505195945050505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461040957600080fd5b73ffffffffffffffffffffffffffffffffffffffff8116600090815260016020526040902054819060ff161561043e57600080fd5b73ffffffffffffffffffffffffffffffffffffffff8216600081815260016020819052604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00168317905560028054928301815583527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace90910180547fffffffffffffffffffffffff00000000000000000000000000000000000000001684179055513392917f94bb87f4c15c4587ff559a7584006fa01ddf9299359be6b512b94527aa961aca91a35050565b600280548290811061051e57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b6000805473ffffffffffffffffffffffffffffffffffffffff16331461056a57600080fd5b73ffffffffffffffffffffffffffffffffffffffff8216600090815260016020526040902054829060ff1615156105a057600080fd5b73ffffffffffffffffffffffffffffffffffffffff8316600090815260016020526040812080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016905591505b600254821015610739578273ffffffffffffffffffffffffffffffffffffffff1660028381548110151561061e57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16141561072e57600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff810190811061067657fe5b6000918252602090912001546002805473ffffffffffffffffffffffffffffffffffffffff90921691849081106106a957fe5b600091825260209091200180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01906107289082610822565b50610739565b6001909101906105ee565b604051339073ffffffffffffffffffffffffffffffffffffffff8516907ff5b347a1e40749dd050f5f07fbdbeb7e3efa9756903044dd29401fd1d4bb4a1c90600090a3505050565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60016020526000908152604090205460ff1681565b6060600280548060200260200160405190810160405280929190818152602001828054801561081757602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff1681526001909101906020018083116107ec575b505050505090505b90565b8154818355818111156108465760008381526020902061084691810190830161084b565b505050565b61081f91905b808211156108655760008155600101610851565b50905600a165627a7a7230582079f4bd8155b4db09f053f105c3765009e81b1b80e6de226a39db69b08a8cf2c60029",
+            "runtime_bytecode": "0x60806040526004361061008d5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166313af4035811461009257806315dacbea146100c257806342f1181e14610113578063494503d41461014157806370712939146101825780638da5cb5b146101b0578063b9181611146101c5578063d39de6e9146101f3575b600080fd5b34801561009e57600080fd5b506100c073ffffffffffffffffffffffffffffffffffffffff60043516610258565b005b3480156100ce57600080fd5b506100ff73ffffffffffffffffffffffffffffffffffffffff60043581169060243581169060443516606435610311565b604080519115158252519081900360200190f35b34801561011f57600080fd5b506100c073ffffffffffffffffffffffffffffffffffffffff600435166103e5565b34801561014d57600080fd5b50610159600435610510565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561018e57600080fd5b506100c073ffffffffffffffffffffffffffffffffffffffff60043516610545565b3480156101bc57600080fd5b50610159610781565b3480156101d157600080fd5b506100ff73ffffffffffffffffffffffffffffffffffffffff6004351661079d565b3480156101ff57600080fd5b506102086107b2565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561024457818101518382015260200161022c565b505050509050019250505060405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff16331461027c57600080fd5b73ffffffffffffffffffffffffffffffffffffffff8116151561029e57600080fd5b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821780845560405192939116917f70aea8d848e8a90fb7661b227dc522eb6395c3dac71b63cb59edd5c9899b23649190a350565b3360009081526001602052604081205460ff16151561032f57600080fd5b604080517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff86811660048301528581166024830152604482018590529151918716916323b872dd916064808201926020929091908290030181600087803b1580156103b057600080fd5b505af11580156103c4573d6000803e3d6000fd5b505050506040513d60208110156103da57600080fd5b505195945050505050565b60005473ffffffffffffffffffffffffffffffffffffffff16331461040957600080fd5b73ffffffffffffffffffffffffffffffffffffffff8116600090815260016020526040902054819060ff161561043e57600080fd5b73ffffffffffffffffffffffffffffffffffffffff8216600081815260016020819052604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00168317905560028054928301815583527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace90910180547fffffffffffffffffffffffff00000000000000000000000000000000000000001684179055513392917f94bb87f4c15c4587ff559a7584006fa01ddf9299359be6b512b94527aa961aca91a35050565b600280548290811061051e57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b6000805473ffffffffffffffffffffffffffffffffffffffff16331461056a57600080fd5b73ffffffffffffffffffffffffffffffffffffffff8216600090815260016020526040902054829060ff1615156105a057600080fd5b73ffffffffffffffffffffffffffffffffffffffff8316600090815260016020526040812080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0016905591505b600254821015610739578273ffffffffffffffffffffffffffffffffffffffff1660028381548110151561061e57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16141561072e57600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff810190811061067657fe5b6000918252602090912001546002805473ffffffffffffffffffffffffffffffffffffffff90921691849081106106a957fe5b600091825260209091200180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055600280547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff01906107289082610822565b50610739565b6001909101906105ee565b604051339073ffffffffffffffffffffffffffffffffffffffff8516907ff5b347a1e40749dd050f5f07fbdbeb7e3efa9756903044dd29401fd1d4bb4a1c90600090a3505050565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60016020526000908152604090205460ff1681565b6060600280548060200260200160405190810160405280929190818152602001828054801561081757602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff1681526001909101906020018083116107ec575b505050505090505b90565b8154818355818111156108465760008381526020902061084691810190830161084b565b505050565b61081f91905b808211156108655760008155600101610851565b50905600a165627a7a7230582079f4bd8155b4db09f053f105c3765009e81b1b80e6de226a39db69b08a8cf2c60029",
+            "updated_at": 1535505682797,
+            "source_map": "932:2473:1:-;;;285:5:0;:18;;-1:-1:-1;;;;;;285:18:0;293:10;285:18;;;932:2473:1;;;;;;",
+            "source_map_runtime": "932:2473:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;316:171:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;316:171:0;;;;;;;;;2885:239:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2885:239:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1732:250;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1732:250:1;;;;;;;1404:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1404:28:1;;;;;;;;;;;;;;;;;;;;;;;;2096:476;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2096:476:1;;;;;;;79:20:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;79:20:0;;;;1355:43:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1355:43:1;;;;;;;3270:133;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3270:133:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;3270:133:1;;;;;;;;;;;;;;;;;316:171:0;224:5;;;;210:10;:19;202:28;;;;;;403:18;;;;;395:27;;;;;;432:5;:12;;;;;;;;;;;;;;459:21;;432:12;;468:5;;;459:21;;432:5;459:21;316:171;:::o;2885:239:1:-;1109:10;3048:4;1098:22;;;:10;:22;;;;;;;;1090:31;;;;;;;;3075:42;;;;;;:25;:42;;;;;;;;;;;;;;;;;;;;;;:25;;;;;;:42;;;;;;;;;;;;;;;-1:-1:-1;3075:25:1;:42;;;5:2:-1;;;;30:1;27;20:12;5:2;3075:42:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;3075:42:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3075:42:1;;2885:239;-1:-1:-1;;;;;2885:239:1:o;1732:250::-;224:5:0;;;;210:10;:19;202:28;;;;;;1312:18:1;;;;;;;:10;:18;;;;;;1839:6;;1312:18;;1311:19;1303:28;;;;;;1861:18;;;;;;;1882:4;1861:18;;;;;;;;:25;;;;;;;;1896:11;27:10:-1;;23:18;;;45:23;;1896:24:1;;;;;;;;;;;;;;1930:45;1964:10;;1861:18;1930:45;;;240:1:0;1732:250:1;:::o;1404:28::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1404:28:1;:::o;2096:476::-;2265:6;224:5:0;;;;210:10;:19;202:28;;;;;;1205:18:1;;;;;;;:10;:18;;;;;;2203:6;;1205:18;;1197:27;;;;;;;;2232:18;;;;;;;:10;:18;;;;;2225:25;;;;;;2232:18;-1:-1:-1;2260:249:1;2281:11;:18;2277:22;;2260:249;;;2342:6;2324:24;;:11;2336:1;2324:14;;;;;;;;;;;;;;;;;;;;;;:24;2320:179;;;2385:11;2397:18;;:22;;;;2385:35;;;;;;;;;;;;;;;;2368:11;:14;;2385:35;;;;;2380:1;;2368:14;;;;;;;;;;;;;;;:52;;;;;;;;;;;;;;;2438:11;:23;;;;;;;;;:::i;:::-;;2479:5;;2320:179;2301:3;;;;;2260:249;;;2518:47;;2554:10;;2518:47;;;;;;;;;240:1:0;2096:476:1;;:::o;79:20:0:-;;;;;;:::o;1355:43:1:-;;;;;;;;;;;;;;;:::o;3270:133::-;3353:9;3385:11;3378:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3270:133;;:::o;932:2473::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;",
+            "sources": [
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/Owned/Owned.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/exchanges/TokenTransferProxy/TokenTransferProxy.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/tokens/ERC20/ERC20.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/tokens/ERC20/ERC20Face.sol"
+            ],
+            "address": "0x27fb1d72e1278d8c00fd083327cf87e2659c9c83",
+            "constructor_args": "0x"
+        }
+    }
+}

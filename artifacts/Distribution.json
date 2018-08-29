@@ -1,0 +1,109 @@
+{
+    "contract_name": "Distribution",
+    "networks": {
+        "5777": {
+            "solc_version": "0.4.24",
+            "source_tree_hash": "0x3ce830770462ba3b8bd0d951c5b2e00d71a8df193517254e614a829cb460e305",
+            "optimizer_enabled": true,
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_fee",
+                            "type": "uint256"
+                        },
+                        {
+                            "name": "_distributor",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "setFee",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [
+                        {
+                            "name": "_distributor",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "getFee",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_pool",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_distributor",
+                            "type": "address"
+                        },
+                        {
+                            "name": "_buyer",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "subscribe",
+                    "outputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "function"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "buyer",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "distributor",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": false,
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "Subscription",
+                    "type": "event"
+                }
+            ],
+            "bytecode": "0x608060405234801561001057600080fd5b50610448806100206000396000f3006080604052600436106100565763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663b4f2e8b8811461005b578063b88c91481461008e578063e487721a146100ce575b600080fd5b34801561006757600080fd5b5061008c60043573ffffffffffffffffffffffffffffffffffffffff602435166100fb565b005b34801561009a57600080fd5b506100bc73ffffffffffffffffffffffffffffffffffffffff60043516610179565b60408051918252519081900360200190f35b61008c73ffffffffffffffffffffffffffffffffffffffff600435811690602435811690604435166101a1565b73ffffffffffffffffffffffffffffffffffffffff811660009081526020819052604090205481901561012d57600080fd5b8173ffffffffffffffffffffffffffffffffffffffff8116151561015057600080fd5b505073ffffffffffffffffffffffffffffffffffffffff16600090815260208190526040902055565b73ffffffffffffffffffffffffffffffffffffffff1660009081526020819052604090205490565b6000808473ffffffffffffffffffffffffffffffffffffffff1663af41cec0846040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561023f57600080fd5b505af1158015610253573d6000803e3d6000fd5b505050506040513d602081101561026957600080fd5b505073ffffffffffffffffffffffffffffffffffffffff84166000908152602081905260409020546102a8906102a09034906103ab565b6127106103d6565b91506102b4348361040a565b60405190915073ffffffffffffffffffffffffffffffffffffffff86169082156108fc029083906000818181858888f193505050501580156102fa573d6000803e3d6000fd5b5060405173ffffffffffffffffffffffffffffffffffffffff85169083156108fc029084906000818181858888f1935050505015801561033e573d6000803e3d6000fd5b508373ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167f4d1db39debc799df6a6a3bad1c8809c46cbe6eb3b784df03f50a061c487994c6836040518082815260200191505060405180910390a35050505050565b60008282028315806103c757508284828115156103c457fe5b04145b15156103cf57fe5b9392505050565b6000808083116103e257fe5b82848115156103ed57fe5b04905082848115156103fb57fe5b0681840201841415156103cf57fe5b60008282111561041657fe5b509003905600a165627a7a72305820515a902983fd38d38b7ec16f51cbca18a04455dc8cacad67c5156c4401cde79c0029",
+            "runtime_bytecode": "0x6080604052600436106100565763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663b4f2e8b8811461005b578063b88c91481461008e578063e487721a146100ce575b600080fd5b34801561006757600080fd5b5061008c60043573ffffffffffffffffffffffffffffffffffffffff602435166100fb565b005b34801561009a57600080fd5b506100bc73ffffffffffffffffffffffffffffffffffffffff60043516610179565b60408051918252519081900360200190f35b61008c73ffffffffffffffffffffffffffffffffffffffff600435811690602435811690604435166101a1565b73ffffffffffffffffffffffffffffffffffffffff811660009081526020819052604090205481901561012d57600080fd5b8173ffffffffffffffffffffffffffffffffffffffff8116151561015057600080fd5b505073ffffffffffffffffffffffffffffffffffffffff16600090815260208190526040902055565b73ffffffffffffffffffffffffffffffffffffffff1660009081526020819052604090205490565b6000808473ffffffffffffffffffffffffffffffffffffffff1663af41cec0846040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001915050602060405180830381600087803b15801561023f57600080fd5b505af1158015610253573d6000803e3d6000fd5b505050506040513d602081101561026957600080fd5b505073ffffffffffffffffffffffffffffffffffffffff84166000908152602081905260409020546102a8906102a09034906103ab565b6127106103d6565b91506102b4348361040a565b60405190915073ffffffffffffffffffffffffffffffffffffffff86169082156108fc029083906000818181858888f193505050501580156102fa573d6000803e3d6000fd5b5060405173ffffffffffffffffffffffffffffffffffffffff85169083156108fc029084906000818181858888f1935050505015801561033e573d6000803e3d6000fd5b508373ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167f4d1db39debc799df6a6a3bad1c8809c46cbe6eb3b784df03f50a061c487994c6836040518082815260200191505060405180910390a35050505050565b60008282028315806103c757508284828115156103c457fe5b04145b15156103cf57fe5b9392505050565b6000808083116103e257fe5b82848115156103ed57fe5b04905082848115156103fb57fe5b0681840201841415156103cf57fe5b60008282111561041657fe5b509003905600a165627a7a72305820515a902983fd38d38b7ec16f51cbca18a04455dc8cacad67c5156c4401cde79c0029",
+            "updated_at": 1535505649274,
+            "source_map": "973:1352:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;973:1352:1;;;;;;;",
+            "source_map_runtime": "973:1352:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1939:197;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1939:197:1;;;;;;;;;;;2180:143;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2180:143:1;;;;;;;;;;;;;;;;;;;;;;;1454:479;;;;;;;;;;;;;;;;;;1939:197;1272:25;;;:11;:25;;;;;;;;;;:29;2028:12;;1272:34;1264:43;;;;;;2065:12;1390;;;;;1382:21;;;;;;-1:-1:-1;;2093:25:1;;:11;:25;;;;;;;;;;:36;1939:197::o;2180:143::-;2287:25;;2257:7;2287:25;;;;;;;;;;:29;;2180:143::o;1454:479::-;1620:17;1740;1579:5;1573:29;;;1603:6;1573:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1573:37:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1573:37:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;1667:25:1;;;:11;:25;;;1573:37;1667:25;;;;;;:29;1640:65;;1648:49;;1656:9;;1648:7;:49::i;:::-;1699:5;1640:7;:65::i;:::-;1620:85;;1760:29;1768:9;1779;1760:7;:29::i;:::-;1799:25;;1740:49;;-1:-1:-1;1799:14:1;;;;:25;;;;;1740:49;;1799:25;;;;1740:49;1799:14;:25;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;1834:32:1;;:21;;;;:32;;;;;1856:9;;1834:32;;;;1856:9;1834:21;:32;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1834:32:1;1902:12;1881:45;;1894:6;1881:45;;;1916:9;1881:45;;;;;;;;;;;;;;;;;;1454:479;;;;;:::o;86:161:7:-;148:7;179:5;;;201:6;;;:20;;;220:1;215;211;:5;;;;;;;;:10;201:20;194:28;;;;;;239:1;86:161;-1:-1:-1;;;86:161:7:o;253:182::-;315:7;;341:5;;;334:13;;;;373:1;369;:5;;;;;;;;357:17;;408:1;404;:5;;;;;;;;400:1;396;:5;:13;391:1;:18;384:26;;;;;441:124;503:7;529:6;;;;522:14;;;;-1:-1:-1;553:5:7;;;441:124::o",
+            "sources": [
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/Authority/AuthorityFace.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/Distribution/Distribution.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/Distribution/DistributionFace.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/Vault/Vault.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/Vault/VaultFace.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/VaultEventful/VaultEventfulFace.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/Owned/OwnedUninitialized.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/SafeMath/SafeMathLight.sol",
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/tokens/ERC20/ERC20Face.sol"
+            ]
+        }
+    }
+}

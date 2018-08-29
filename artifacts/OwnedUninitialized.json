@@ -1,0 +1,65 @@
+{
+    "contract_name": "OwnedUninitialized",
+    "networks": {
+        "5777": {
+            "solc_version": "0.4.24",
+            "source_tree_hash": "0xc6e8949ea8c55f1629bec73b462a870f6db9402a88cb124896f4ecf926e8a0f8",
+            "optimizer_enabled": true,
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_new",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "setOwner",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "anonymous": false,
+                    "inputs": [
+                        {
+                            "indexed": true,
+                            "name": "old",
+                            "type": "address"
+                        },
+                        {
+                            "indexed": true,
+                            "name": "current",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "NewOwner",
+                    "type": "event"
+                }
+            ],
+            "bytecode": "0x608060405234801561001057600080fd5b506101bf806100206000396000f30060806040526004361061004b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166313af403581146100505780638da5cb5b14610080575b600080fd5b34801561005c57600080fd5b5061007e73ffffffffffffffffffffffffffffffffffffffff600435166100be565b005b34801561008c57600080fd5b50610095610177565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b60005473ffffffffffffffffffffffffffffffffffffffff1633146100e257600080fd5b73ffffffffffffffffffffffffffffffffffffffff8116151561010457600080fd5b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821780845560405192939116917f70aea8d848e8a90fb7661b227dc522eb6395c3dac71b63cb59edd5c9899b23649190a350565b60005473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a72305820e686e38c28dadcf90cb1ebc1c129a79ffe74bbbc946a16b40dff07bdd520fc3b0029",
+            "runtime_bytecode": "0x60806040526004361061004b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166313af403581146100505780638da5cb5b14610080575b600080fd5b34801561005c57600080fd5b5061007e73ffffffffffffffffffffffffffffffffffffffff600435166100be565b005b34801561008c57600080fd5b50610095610177565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b60005473ffffffffffffffffffffffffffffffffffffffff1633146100e257600080fd5b73ffffffffffffffffffffffffffffffffffffffff8116151561010457600080fd5b600080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff83811691821780845560405192939116917f70aea8d848e8a90fb7661b227dc522eb6395c3dac71b63cb59edd5c9899b23649190a350565b60005473ffffffffffffffffffffffffffffffffffffffff16815600a165627a7a72305820e686e38c28dadcf90cb1ebc1c129a79ffe74bbbc946a16b40dff07bdd520fc3b0029",
+            "updated_at": 1535505676414,
+            "source_map": "56:364:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;56:364:0;;;;;;;",
+            "source_map_runtime": "56:364:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;266:152;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;266:152:0;;;;;;;;;91:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;91:20:0;;;;;;;;;;;;;;;;;;;;;;;266:152;236:5;;;;222:10;:19;214:28;;;;;;333:18;;;;;325:27;;;;;;362:5;:12;;;;;;;;;;;;;;390:21;;362:12;;399:5;;;390:21;;362:5;390:21;266:152;:::o;91:20::-;;;;;;:::o",
+            "sources": [
+                "/home/gabriele/rigoblock-monorepo/packages/protocol/solidity-contracts/utils/Owned/OwnedUninitialized.sol"
+            ]
+        }
+    }
+}
